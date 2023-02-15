@@ -1,21 +1,26 @@
-{# @{% extends 'base.html.twig' %} #}
+{% extends 'base.html.twig' %}
 
-<h1>{{ title }}</h1>
+{% block title %}
+	Create a new Record | {{ parent() }}
+{% endblock %}
+{% block body %}
+	<h1>{{ title }}</h1>
 
-{# Comments #}
+	{# Comments #}
 
-<div>
-	Hmm maybe?
-	<p>
-		Tracks:
-	</p>
+	<div>
+		Hmm maybe?
+		<p>
+			Tracks:
+		</p>
 
-	<ul>
-    {% for track in tracks %}
-    {#Filters can be chained#}
-        <li>{{track.artist |upper}}-{{track.song}}</li>
-    {% endfor %}
-    </ul>
-</div>
+		<ul>
+			{% for track in tracks %}
+				{#Filters can be chained#}
+				<li>{{track.artist |upper}}-{{track.song}}</li>
+			{% endfor %}
+		</ul>
+	</div>
 
-{{ 'saySomething' }}
+	{{ 'saySomething' }}
+{% endblock %}
